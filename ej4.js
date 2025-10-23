@@ -1,5 +1,5 @@
 //Solicita por teclado tres números; si el primero es negativo, muestra el producto de los tres y si no lo es, muestra la suma.
-const prompt = require('prompt-sync')({sigint: true});
+let prompt = require('prompt-sync')({sigint: true});
 
 let num1Str = prompt('Ingrese el primer número: ');
 let num2Str = prompt('Ingrese el segundo número: ');
