@@ -1,7 +1,7 @@
 //Algoritmo que lea un número por teclado. En caso de que ese número sea 0 o menor que 0, se saldrá del programa imprimiendo antes un mensaje de error. Si es mayor que 0, se deberá calcular su cuadrado y la raíz cuadrada del mismo, visualizando el número que ha tecleado el usuario y su resultado («Del número X, su potencia es X y su raíz X» ). 
 //Para calcular la raíz cuadrada se puede usar la función interna RAIZ(X)  o con una potencia de 0,5.
 
-const prompt = require('prompt-sync')({sigint: true});
+let prompt = require('prompt-sync')({sigint: true});
 let numStr = prompt('Ingrese un número: ');
 let num = Number(numStr);
 
