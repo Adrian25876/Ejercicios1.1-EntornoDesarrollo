@@ -5,31 +5,18 @@ let prompt = require('prompt-sync')();
 
 let okNums = true;
 
-let a = prompt('Introduzca a:');
-// typeof a === 'string'
-// si a = 'asdf' => Number(a) === NaN (Not-a-Number)
-
-console.log(Number(a));
-
-if ( Number.isNaN(Number(a)) ) {
-    // declaracion de cadena con backtip ` que permite interpolacion de variables ${a}
-    console.log(`a = ${a} no es un número válido!!!`);
+let aStr = prompt('Introduzca a:');
+let a = Number(aStr);
+if (Number.isNaN(a)) {
+    console.log(`a = ${aStr} no es un número válido!!!`);
     okNums = false;
-} else {
-    a = Number(a);
-    // typeof a === 'number'
 }
 
-let b = prompt('Introduzca b:');
-// typeof b === 'string'
-
-if ( Number.isNaN(Number(b)) ) {
-    // declaracion de cadena con backtip ` que permite interpolacion de variables ${a}
-    console.log(`b = ${b} no es un número válido!!!`);
+let bStr = prompt('Introduzca b:');
+let b = Number(bStr);
+if (Number.isNaN(b)) {
+    console.log(`b = ${bStr} no es un número válido!!!`);
     okNums = false;
-} else {
-    b = Number(b);
-    // typeof b === 'number'
 }
 
 if (okNums) {
@@ -37,7 +24,16 @@ if (okNums) {
     let resta = a - b;
     let prod = a * b;
 
-    console.log(`suma = ${suma}, resta = ${resta}`);
+    console.log(`Suma = ${suma}`);
+    console.log(`Resta = ${resta}`);
+    console.log(`Producto = ${prod}`);
+
+    if (b !== 0) {
+        let div = a / b;
+        console.log(`División = ${div}`);
+    } else {
+        console.log('División no definida (no se puede dividir por cero)');
+    }
 } else {
-    console.log('Numero/s no operables!');
+    console.log('Número(s) no operable(s)!');
 }
