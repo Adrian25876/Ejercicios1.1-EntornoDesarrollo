@@ -1,5 +1,5 @@
 //Un colegio desea saber qué porcentaje de niños y qué porcentaje de niñas hay en el curso actual. Diseñar un algoritmo para este propósito.
-const prompt = require('prompt-sync')({sigint: true});
+let prompt = require('prompt-sync')({sigint: true});
 
 let niñosStr = prompt('Ingrese la cantidad de niños: ');
 let niñasStr = prompt('Ingrese la cantidad de niñas: ');
