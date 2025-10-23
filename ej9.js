@@ -4,7 +4,7 @@ let tieneBachiller = prompt("¿Tienes título de bachiller? (si/no)");
 if (tieneBachiller === "si") {
     console.log("Puedes acceder a cursar un ciclo formativo de grado superior.");
 } else if (tieneBachiller === "no") {
-    let superoPrueba = prompt("¿Has superado la prueba de acceso? (si/no)").toLowerCase();
+    let superoPrueba = prompt("¿Has superado la prueba de acceso? (si/no)");
     if (superoPrueba === "si") {
         console.log("Puedes acceder a cursar un ciclo formativo de grado superior.");
     } else {
