@@ -1,40 +1,39 @@
-// Se pide realizar un algoritmo que lea dos números e indique el mayor
+/*El  juego de adivinar un número. El valor a adivinar lo tendremos puesto en una variable el valor
+que nosotros queramos.
 
-// https://www.npmjs.com/package/prompt-sync?activeTab=versions
-// Esta forma de importar paquete es la nativa de Node
-// y se conoce por ser CommonJS modules
-let prompt = require('prompt-sync')();
+El número será entre 1 y 100. El programa debe dar pistas de si el número a adivinar es mayor o menor
+que el introducido.
 
-let flagformatoOk = true;
+Tendremos que hacer los siguientes subprocesos (funciones):
 
-let a = prompt("Introduzca a: ");
-a = Number(a);
+leerNumero(): Pide un numero y hasta que el usuario no escribe un valor entre 1 y 100,  
+vuelve a pedir el valor.
 
-if (Number.isNaN(a)) {
-    // Backtick declara cadena con capacidad de interpolación de cadena
-    console.log(`Error de formato: a = ${a} no es un número!`);
-    flagformatoOk = false;
-}
-
-let b = prompt("Introduzca b: ");
-b = Number(b);
-
-if (Number.isNaN(b)) {
-    console.log(`Error de formato: b = ${b} no es un número!`);
-    flagformatoOk = false;
-}
-
-if (flagformatoOk) {
-    // Hago los cálculos o procesos
-    if (a > b) {
-        console.log(`El mayor es ${a}`);
-    } else if (a == b) {
-        console.log("Son iguales");
-    } else {
-        // b > a
-        console.log(`El mayor es ${b}`);
+comprobarValor(numeroUsuario, numeroCorrecto): comprueba si el número es correcto; éste  
+devuelve un número que puede ser:  0: los dos numeros son iguales  1: el numeroUsuario es mayor que 
+el numeroCorrecto  -1: el numeroUsuario es menor que el numeroCorrecto.*/
+let prompt = require ('prompt-sync')();
+let clave = 35;
+leerNumero(clave);
+function leerNumero (clave) {
+    do{
+    let codigo = prompt('Introduce un numero entre 1 y 100: ');
+    if(codigo>0 && codigo<101){
+    comprobarValor(codigo, clave);
+    }else{
+        console.log('Tiene que ser entre 1 y 100');
     }
-} else {
-    console.log("No se puede calcular, formato de número incorrecto!");
+    }while(codigo=!clave)
 }
+function comprobarValor(codigo,clave){
 
+    if(codigo==clave){
+        console.log(`0: los dos numeros son iguales ${codigo} y ${clave}`);
+    }else if (codigo < clave){
+        console.log(`-1: el ${codigo} es menor que el numeroCorrecto`);  
+        leerNumero(clave);
+    }else{
+        console.log(`1: el ${codigo} es mayor que el numeroCorrecto`);
+        leerNumero(clave);
+    }
+}
